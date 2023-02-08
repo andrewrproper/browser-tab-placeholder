@@ -13,6 +13,9 @@ This allows grouping tabs by subject.
 
 This is done using a very simple standalone local web page.
 
+This page is also meant to be very light on resource usage. Therefore,
+it has no dependencies and has a very simple look and feel.
+
 ## Works Well With
 
 This works well in Firefox with the 
