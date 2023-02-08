@@ -13,6 +13,9 @@
     body, input {
       background-color: black;
       color: #edd;
+			margin: 0px;
+			padding: 0.5em;
+			overflow-y: hidden;
     }
     hr {
       border: 1px solid #555;
@@ -20,6 +23,17 @@
     a {
       color: #bbe;
     }
+		#footer-left {
+			float: left;
+		}
+		#footer-right {
+			float: right;
+		}
+		#footer {
+			clear: both; 
+			height: 100vh;
+			overflow-y: hidden;
+		}
   </style>
 </head>
 
@@ -27,12 +41,12 @@
 	<h1 id="title">
   	-[ . . . ]-
 	</h1>
-	<div>
-		(placeholder, for in web browser tab)
+	<div style=" font-style: italic;">
+		This page allows using a tab as a named placeholder in your web browser.
 	</div>
 	<br/>
 	<div>
-		To set title, add ?t=title to end of URL.
+		To set tab name, add ?t=title to end of URL.
 	</div>
 	<br/>
 	<div>
@@ -41,14 +55,13 @@
   <br/>
   <br/>
   <hr/>
-	<div style=" float: left; ">
+	<div id="footer-left">
 		<a href="https://github.com/andrewrproper/browser-tab-placeholder" target="_blank" rel="noopener">GitHub</a>
 	</div>
-	<div style=" float: right; ">
+	<div id="footer-right">
 		<a href="https://andrewrproper.github.io/browser-tab-placeholder" target="_blank" rel="noopener">Website</a>
 	</div>
-	<div style=" clear: both; ">
-	</div>
+	<div id="footer"></div>
 
 	<script type="text/javascript">
 		// https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
