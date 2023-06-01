@@ -10,12 +10,35 @@
   	-[ . . . ]-
   </title>
   <style type="text/css">
+		#title-wrap {
+			font-size: 14vw;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			margin-bottom: 0.5em;
+			border: 0.15em solid #edd;
+		}
+		#title {
+			border-right: 0.15em solid #edd;
+			border-left: 0.15em solid #edd;
+			margin-right: 0.2em;
+			margin-left: 0.2em;
+			padding-left: 0.2em;
+			padding-right: 0.2em;
+			margin-top: 0;
+			margin-bottom: 0;
+			display: inline-block;
+			font-family: sans-serif;
+			padding-top: 0;
+			padding-bottom: 0;
+			word-break: break-all;
+		}
+
     body, input {
       background-color: #1a1a1a;
       color: #edd;
 			margin: 0px;
 			padding: 1em;
-			overflow-y: hidden;
 			font-size: 105%;
     }
     hr {
@@ -26,25 +49,32 @@
 			text-decoration: none;
     }
 		#footer-left {
-			margin-top: 4em;
+			margin-top: 2em;
 			float: left;
 		}
 		#footer-right {
-			margin-top: 4em;
+			margin-top: 2em;
 			float: right;
 		}
 		#footer {
 			clear: both; 
+			height: 50vh;
+			/*
 			height: 100vh;
 			overflow-y: hidden;
+			*/
 		}
   </style>
 </head>
 
 <body>
-	<h1 id="title">
-  	-[ . . . ]-
-	</h1>
+	<div>
+		<div id="title-wrap">
+			<div id="title">
+				. . .
+			</div>
+		</div>
+	</div>
 	<div style=" font-style: italic;">
 		This page allows using a tab as a named placeholder in your web browser.
 	</div>
@@ -73,9 +103,10 @@
 		);
 
 		function setTitleTo (title) {
-			let newTitle = "-[ " + title + " ]-";
-			document.title = newTitle;
-			document.getElementById("title").innerHTML = newTitle;
+			//const newDocTitle = "-[ " + title + " ]-";
+			const newDocTitle = "|| " + title + " ||";
+			document.getElementById("title").innerHTML = title;
+			document.title = newDocTitle;
 		}
 		let input = document.getElementById("setTitle");
 			
