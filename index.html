@@ -96,7 +96,15 @@
 	<div id="footer"></div>
 
 	<script type="text/javascript">
-		const endDelim = ' .'.repeat(10);
+		// This max is based on firefox mobile, with tabs in list display format.
+		const maxTitleWithDelimLength = 52; 
+		const endDelimPart = ' .';
+
+		// This factor is needed because title display characters are wider than just dots.
+		const endDelimPartFactor = 0.5; 
+
+		const titlePrefix = "|| ";
+		const titleSuffix = " ||";
 
 		setTitleTo("..."); // default
 
@@ -108,10 +116,24 @@
 		);
 
 		function setTitleTo (title) {
-			//const newDocTitle = "-[ " + title + " ]-";
+			const titleDisplayLength = title.length + titlePrefix.length + titleSuffix.length;
+
+			let endDelim = "";
+			const lenDiff = maxTitleWithDelimLength - titleDisplayLength;
+			if ( lenDiff > 0 ) {
+				const repeatNum = Math.floor(lenDiff / endDelimPart.length * endDelimPartFactor);
+				console.debug("length calc", {
+					maxTitleWithDelimLength: maxTitleWithDelimLength,
+					titleDisplayLength: titleDisplayLength, 
+					lenDiff: lenDiff, 
+					repeatNum: repeatNum
+				});
+				if ( repeatNum > 0 ) endDelim = endDelimPart.repeat(repeatNum);
+			}
+
 			document.getElementById("title").innerHTML = title;
 
-			const newDocTitle = "|| " + title + " || " + endDelim;
+			const newDocTitle = titlePrefix + title + titleSuffix + " " + endDelim;
 			document.title = newDocTitle;
 		}
 		let input = document.getElementById("setTitle");
