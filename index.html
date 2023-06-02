@@ -122,12 +122,14 @@
 			const lenDiff = maxTitleWithDelimLength - titleDisplayLength;
 			if ( lenDiff > 0 ) {
 				const repeatNum = Math.floor(lenDiff / endDelimPart.length * endDelimPartFactor);
+				/*
 				console.debug("length calc", {
 					maxTitleWithDelimLength: maxTitleWithDelimLength,
 					titleDisplayLength: titleDisplayLength, 
 					lenDiff: lenDiff, 
 					repeatNum: repeatNum
 				});
+				*/
 				if ( repeatNum > 0 ) endDelim = endDelimPart.repeat(repeatNum);
 			}
 
@@ -141,7 +143,7 @@
 		console.debug(params);
 		let title = params.t;
 		if ( title !== undefined && title !== null && title !== "" ) {
-			console.debug("found title from params: "+title);
+			//console.debug("found title from params: "+title);
 			setTitleTo(title);
 			input.value = title;
 		} else {
