@@ -96,7 +96,7 @@
 	<div id="footer"></div>
 
 	<script type="text/javascript">
-		const endDelim = ' . . . . . . . . . . . . . . . . . . . . .';
+		const endDelim = ' .'.repeat(10);
 
 		setTitleTo("..."); // default
 
@@ -109,8 +109,9 @@
 
 		function setTitleTo (title) {
 			//const newDocTitle = "-[ " + title + " ]-";
-			const newDocTitle = "|| " + title + " || " + endDelim;
 			document.getElementById("title").innerHTML = title;
+
+			const newDocTitle = "|| " + title + " || " + endDelim;
 			document.title = newDocTitle;
 		}
 		let input = document.getElementById("setTitle");
