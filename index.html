@@ -8,7 +8,7 @@
 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
   <title>
-  	|| &nbsp; . &nbsp; . &nbsp; . &nbsp; ||
+  	|| || 
   </title>
   <style type="text/css">
 		#title-wrap {
@@ -96,6 +96,10 @@
 	<div id="footer"></div>
 
 	<script type="text/javascript">
+		const endDelim = ' . . . . . . . . . . . . . . . . . . . . .';
+
+		setTitleTo("..."); // default
+
 		// https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 		const params = new Proxy(
 			new URLSearchParams(window.location.search), {
@@ -105,7 +109,7 @@
 
 		function setTitleTo (title) {
 			//const newDocTitle = "-[ " + title + " ]-";
-			const newDocTitle = "|| " + title + " ||";
+			const newDocTitle = "|| " + title + " || " + endDelim;
 			document.getElementById("title").innerHTML = title;
 			document.title = newDocTitle;
 		}
@@ -134,6 +138,7 @@
 				console.debug("no title found from text input");
 			}
 		});
+
 		input.focus();
 	</script>
 </body>
