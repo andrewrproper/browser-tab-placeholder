@@ -49,6 +49,26 @@
       color: #bbe;
 			text-decoration: none;
     }
+
+		#app-name {
+			font-weight: bold; 
+			margin-bottom: 1em;
+		}
+		#features {
+
+		}
+
+		#footer {
+			text-align: center;
+		}
+		#open-button {
+			display: block;
+			margin-top: 4em;
+			padding: 1em;
+      background-color: #222;
+      border: 3px solid #555;
+			text-align: center;
+		}
 		#footer-left {
 			margin-top: 2em;
 			float: left;
@@ -57,10 +77,10 @@
 			margin-top: 2em;
 			float: right;
 		}
-		#footer {
-			clear: both; 
+		#end-footer {
 			height: 50vh;
 			/*
+			clear: both; 
 			height: 100vh;
 			overflow-y: hidden;
 			*/
@@ -76,25 +96,36 @@
 			</div>
 		</div>
 	</div>
-	<div style=" font-style: italic;">
-		This page allows using a named separator tab as a placeholder in your web browser.
+	<div id='app-name'>
+		Browser Tab Placeholder
+	</div>
+	<div id='features'>
+		Features:
+		<ul>
+			<li>
+			Use this page as a separator between other tabs, in your browser. This works especially well with vertical tabs.
+			</li><li>
+			Give the page a name, if you want. The name will be shown in the browser tab, too.
+			</li><li>
+			Bookmark the page, using it as a separator between other bookmarks,
+			with or without giving it a name.
+			</li>
+		</ul>
 	</div>
 	<br/>
 	<br/>
 	<div>
 		Tab Name: &nbsp; <input id="setTitle"/>
 	</div>
-	<div id="footer-left">
+	<div id="footer">
 		<a href="https://github.com/andrewrproper/browser-tab-placeholder" target="_blank" rel="noopener">GitHub</a>
 		&nbsp; | &nbsp;
 		<a href="https://andrewrproper.github.io/browser-tab-placeholder" target="_blank" rel="noopener">Website</a>
-		&nbsp; | &nbsp;
-		<a href="https://andrewrproper.github.io/browser-tab-placeholder" target="_blank" rel="noopener">Open Another Tab</a>
 	</div>
-	<div id="footer-right">
-		<a href="https://andrewrproper.github.io/browser-tab-placeholder" target="_blank" rel="noopener">Open Another Tab</a>
+	<div>
+		<a id="open-button" href="https://andrewrproper.github.io/browser-tab-placeholder" target="_blank" rel="noopener">Open Another Tab</a>
 	</div>
-	<div id="footer"></div>
+	<div id="end-footer"></div>
 
 	<script type="text/javascript">
 		// This max is based on firefox mobile, with tabs in list display format.
