@@ -1,7 +1,9 @@
 
 # Browser Tab Placeholder
 
-[GitHub](https://github.com/andrewrproper/browser-tab-placeholder)
+[Try it out](https://andrewrproper.github.io/browser-tab-placeholder/)
+
+[GitHub repo](https://github.com/andrewrproper/browser-tab-placeholder)
 
 ## Features
 
