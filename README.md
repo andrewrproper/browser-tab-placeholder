@@ -1,29 +1,19 @@
 
 # Browser Tab Placeholder
 
-![Screenshot, beside Vertical Tabs Reloaded](img/vertical-tabs-reloaded.jpg)
-
 [GitHub](https://github.com/andrewrproper/browser-tab-placeholder)
 
-## Purpose
+## Features
 
-Open a tab between other tabs, and name it.
+- Use this page as a separator between other tabs, in your browser. 
+- Give the page a name, if you want. The name will be shown in the browser tab, too.
+- It works especially well with vertical tabs.
+- Use it to separate other tabs by subject.
+- Bookmark the page, using it as a separator between other bookmarks.
 
-This allows grouping tabs by subject.
+## Design
 
 This is done using a very simple standalone local web page.
 
-This page is also meant to be very light on resource usage. Therefore,
-it has no dependencies and has a very simple look and feel.
-
-## Works Well With
-
-This works well in Firefox with the 
-[Vertical Tabs Reloaded](https://addons.mozilla.org/en-CA/firefox/addon/vertical-tabs-reloaded/) 
-add-on, pictured in the screenshot above.
-
-## Adding to Bookmarks Bar
-
-Add a bookmark to the page, in your bookmarks bar, to make it easier
-to open the page quickly when needed.
-
+The page is meant to be very light on resource usage. Therefore,
+it has no dependencies, and has a very simple look and feel.
