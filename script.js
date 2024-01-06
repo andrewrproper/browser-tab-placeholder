@@ -68,3 +68,16 @@ input.addEventListener('change', function(event) {
 });
 
 input.focus();
+
+
+let aboutButton = document.getElementById("about-button");
+let aboutHTML = document.getElementById("about-html");
+
+aboutButton.addEventListener('click', function(event) {
+  // toggle between displayed and not displayed
+  if ( aboutHTML.style.display == 'none' ) {
+    aboutHTML.style.display = '';
+  } else {
+    aboutHTML.style.display = 'none';
+  }
+});
