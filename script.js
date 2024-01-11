@@ -55,13 +55,14 @@ if ( title !== undefined && title !== null && title !== "" ) {
 
 input.addEventListener('keyup', function(event) {
   let title = this.value;
-  if ( title !== undefined && title !== null && title !== "" ) {
+  if ( title !== undefined && title !== null) {
     //console.debug("found title from text input: "+title);
-    setTitleTo(title);
+    setTitleTo(title || "...");
 
 
     let searchParams = new URLSearchParams(window.location.search);
-    searchParams.set("t", title);
+    if ( title ) searchParams.set("t", title);
+    else searchParams.delete("t");
 
     let newURL = new URL(window.location.href);
     newURL.search = searchParams;
