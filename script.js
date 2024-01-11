@@ -41,7 +41,7 @@ function setTitleTo (title) {
   const newDocTitle = titlePrefix + title + titleSuffix + " " + endDelim;
   document.title = newDocTitle;
 }
-let input = document.getElementById("setTitle");
+let input = document.getElementById("set-title");
   
 console.debug(params);
 let title = params.t;
@@ -56,12 +56,17 @@ if ( title !== undefined && title !== null && title !== "" ) {
 input.addEventListener('change', function(event) {
   let title = this.value;
   if ( title !== undefined && title !== null && title !== "" ) {
-    console.debug("found title from text input: "+title);
+    //console.debug("found title from text input: "+title);
     setTitleTo(title);
+
 
     let searchParams = new URLSearchParams(window.location.search);
     searchParams.set("t", title);
-    window.location.search = searchParams;
+
+    let newURL = new URL(window.location.href);
+    newURL.search = searchParams;
+
+    window.history.pushState({}, "", newURL);
   } else {
     console.debug("no title found from text input");
   }
