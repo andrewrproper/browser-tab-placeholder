@@ -53,7 +53,7 @@ if ( title !== undefined && title !== null && title !== "" ) {
   console.debug("no title found from params");
 }
 
-input.addEventListener('change', function(event) {
+input.addEventListener('keyup', function(event) {
   let title = this.value;
   if ( title !== undefined && title !== null && title !== "" ) {
     //console.debug("found title from text input: "+title);
