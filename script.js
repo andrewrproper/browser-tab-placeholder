@@ -70,27 +70,54 @@ function initInput (conf) {
 }
 
 
+function openBlankWindow() {
+  // Get current URL and open a new window/tab with same URL.
+  let thisURL = new URL(window.location.href);
+  thisURL.search = ""; // clear search string
+  window.open(thisURL);
+}
+
+
 function initOpenBlankButton () {
   let button = document.getElementById("open-button");
   if ( button ) {
-    button.addEventListener('click',  function() { 
-      // Get current URL and open a new window/tab with same URL.
-      let thisURL = new URL(window.location.href);
-      thisURL.search = ""; // clear search string
-      window.open(thisURL);
+    button.addEventListener('click',  function(event) { 
+      event.preventDefault(); // Cancel the default action, if needed
+      openBlankWindow();
     });
+
+    // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+    button.addEventListener('keypress',  function(event) { 
+      if (event.key === "Enter") { // If the user presses the "Enter" key on the keyboard
+        event.preventDefault(); // Cancel the default action, if needed
+        openBlankWindow();
+      }
+    }); 
   }
+}
+
+
+function openDuplicateWindow() {
+  // Get current URL and open a new window/tab with same URL.
+  window.open(window.location.href);
 }
 
 
 function initOpenDuplicateButton () {
   let button = document.getElementById("open-button-same-title");
   if ( button ) {
-    button.addEventListener('click',  function() { 
-      // Get current URL and open a new window/tab with same URL.
-      let href = window.location.href;
-      window.open(href);
+    button.addEventListener('click',  function(event) { 
+      event.preventDefault(); // Cancel the default action, if needed
+      openDuplicateWindow();
     });
+
+    // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+    button.addEventListener('keypress',  function(event) { 
+      if (event.key === "Enter") { // If the user presses the "Enter" key on the keyboard
+        event.preventDefault(); // Cancel the default action, if needed
+        openDuplicateWindow();
+      }
+    }); 
   }
 }
 
@@ -100,7 +127,7 @@ function initAbout() {
   let aboutButton = document.getElementById("about-button");
   let aboutHTML = document.getElementById("about-html");
 
-  aboutButton.addEventListener('click', function(event) {
+  aboutButton.addEventListener('click', function() {
     // toggle between displayed and not displayed
     if ( aboutHTML.style.display == 'none' ) {
       aboutHTML.style.display = '';
