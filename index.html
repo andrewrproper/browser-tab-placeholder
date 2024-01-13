@@ -22,13 +22,16 @@
 		</div>
 	</div>
 	<div>
-		Tab Name: &nbsp; <input id="set-title"/>
+		Tab Name: &nbsp; <input tabindex = "1" id="set-title"/>
 	</div>
 	<div>
-		<a id="open-button" href="https://andrewrproper.github.io/browser-tab-placeholder" target="_blank" rel="noopener">Open Another Tab</a>
+		<a id="open-button" tabindex="2">Open Another Tab</a>
+	</div>
+	<div>
+		<a id="open-button-same-title" tabindex="3">Duplicate This Tab</a>
 	</div>
 
-	<button id="about-button">About</button>
+	<button id="about-button" tabindex="4">About</button>
 	<div id="about-html" style=" display: none; ">
 		<div id='app-name'>
 			Browser Tab Placeholder

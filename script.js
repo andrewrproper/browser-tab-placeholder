@@ -55,17 +55,43 @@ function initInput (conf) {
   );
 
   let input = document.getElementById("set-title");
-    
-  let title = params.t;
-  if ( title !== undefined && title !== null && title !== "" ) {
-    setTitleTo(title, conf); // default
-    input.value = title;
+  if ( input ) {
+    let title = params.t;
+    if ( title !== undefined && title !== null && title !== "" ) {
+      setTitleTo(title, conf); // default
+      input.value = title;
+    }
+
+    input.addEventListener('keyup',  function() { inputChanged(input, conf); });
+    input.addEventListener('change', function() { inputChanged(input, conf); });
+
+    input.focus();
   }
+}
 
-  input.addEventListener('keyup',  function() { inputChanged(input, conf); });
-  input.addEventListener('change', function() { inputChanged(input, conf); });
 
-  input.focus();
+function initOpenBlankButton () {
+  let button = document.getElementById("open-button");
+  if ( button ) {
+    button.addEventListener('click',  function() { 
+      // Get current URL and open a new window/tab with same URL.
+      let thisURL = new URL(window.location.href);
+      thisURL.search = ""; // clear search string
+      window.open(thisURL);
+    });
+  }
+}
+
+
+function initOpenDuplicateButton () {
+  let button = document.getElementById("open-button-same-title");
+  if ( button ) {
+    button.addEventListener('click',  function() { 
+      // Get current URL and open a new window/tab with same URL.
+      let href = window.location.href;
+      window.open(href);
+    });
+  }
 }
 
 
@@ -99,9 +125,9 @@ function init () {
   };
 
   setTitleTo("...", conf); // default
-
   initInput(conf);
-
+  initOpenBlankButton();
+  initOpenDuplicateButton();
   initAbout(conf);
 }
 
