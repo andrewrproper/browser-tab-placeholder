@@ -88,7 +88,7 @@ function initOpenBlankButton () {
 
     // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
     button.addEventListener('keypress',  function(event) { 
-      if (event.key === "Enter") { // If the user presses the "Enter" key on the keyboard
+      if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Cancel the default action, if needed
         openBlankWindow();
       }
@@ -113,7 +113,8 @@ function initOpenDuplicateButton () {
 
     // https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
     button.addEventListener('keypress',  function(event) { 
-      if (event.key === "Enter") { // If the user presses the "Enter" key on the keyboard
+      console.debug("key:", event.key);
+      if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Cancel the default action, if needed
         openDuplicateWindow();
       }
